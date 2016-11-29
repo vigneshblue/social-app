@@ -6,6 +6,8 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 #loads bootsrap file converted to sass from its default less 
 # @import "bootstrap-sprockets"; @import "bootstrap"; you must include in scss file
 gem 'bootstrap-sass'
+#for password hashing linked with has_secure_password in user.rb and password_digest column
+gem 'bcrypt'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
