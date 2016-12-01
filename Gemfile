@@ -35,7 +35,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'faker'
 gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
-
+gem 'carrierwave',             '0.11.2' #image upload
+gem 'mini_magick',             '4.5.1' #image resize
+gem 'fog',                     '1.38.0' #image resize
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3' 
