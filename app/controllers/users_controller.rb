@@ -6,10 +6,12 @@ class UsersController < ApplicationController
   def new
   	@user = User.new
   end
+
   def show
   	@user = User.find(params[:id])
     @posts = @user.posts.paginate(page: params[:page])
   end
+
   def create
   	@user = User.new(user_params)
   	if @user.save
@@ -20,6 +22,7 @@ class UsersController < ApplicationController
   		render 'new'
   	end
   end
+  
   def edit
     @user = User.find(params[:id])
   end
@@ -31,6 +34,7 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  
   end
   def destroy
     User.find(params[:id]).destroy
@@ -48,18 +52,15 @@ class UsersController < ApplicationController
   	end
 
   	# Before filters
-
-   
-
-     # Confirms the correct user.
+    #Confirms the correct user.
     def correct_user
       @user = User.find(params[:id])
-     redirect_to(root_url) unless current_user?(@user)
- 	end
+      redirect_to(root_url) unless current_user?(@user)
+ 	  end
 
- 	 #Confirms the admin user.
- 	 def admin_user
- 	 	redirect_to(root_url) unless current_user.admin?
- 	 end
+ 	  #Confirms the admin user.
+ 	  def admin_user
+ 	 	  redirect_to(root_url) unless current_user.admin?
+ 	  end
 
 end
