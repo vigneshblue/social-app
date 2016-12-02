@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+* Ruby version - 2.3.1
 
-* Ruby version
+* Rails version - 5.0
 
-* System dependencies
+ Contains gems for production enviroment. If installing in local, run bundle install without production
+$bundle install --without production
+ 
+ For image resizing to work in local machine, install imagemagick
+$ sudo apt-get update
+$ sudo apt-get install imagemagick --fix-missing
 
-* Configuration
+---------Functions handled upto this-------------
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* User can signup with email id.
+* User can login to his account.
+* User can update his name, email and password.
+* User can post status and upload photos.
+* User can view all other users.
+* User can view all other statuses in Home.
+* User can follow, unfollow other users.
+* User can view particular users posts.
+* Users are displayed with followers and following numbers.
+* User can view his and other users follower and following list of users.
+* User can logout of current session.
+ 
