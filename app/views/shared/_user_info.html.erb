@@ -1,3 +1,4 @@
 <h1><%= current_user.name %></h1>
 <span><%= link_to "view my profile", current_user %></span>
+<%= profile_picture current_user if current_user.picture? %>
 <span><%= pluralize(current_user.posts.count, "post") %></span>

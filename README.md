@@ -19,10 +19,14 @@ $ sudo apt-get install imagemagick --fix-missing
 * User can update his name, email and password.
 * User can post status and upload photos.
 * User can view all other users.
+* User can delete his posts.
 * User can view all other statuses in Home.
 * User can follow, unfollow other users.
 * User can view particular users posts.
 * Users are displayed with followers and following numbers.
 * User can view his and other users follower and following list of users.
 * User can logout of current session.
+* User with admin privilege can delete users.
+* User can upload profile picture and update it.
+* Post displayes thumbnail for users profile picture.
  

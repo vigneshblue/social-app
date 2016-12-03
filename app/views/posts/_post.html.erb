@@ -1,4 +1,5 @@
-<li id="post-<%= post.id %>">
+<li id="post-<%= post.id %>"></li>
+  <span class=""><%= profile_picture post.user if post.user.picture? %></span>
   <span class="user"><%= link_to post.user.name, post.user %></span>
   <span class="content">
   <%= post.content %>

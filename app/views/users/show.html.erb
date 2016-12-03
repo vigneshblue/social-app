@@ -5,6 +5,7 @@
       <h1>
         <%= @user.name %>
       </h1>
+      <%= profile_picture @user if @user.picture? %>
     </section><section class="stats">
       <%= render 'shared/stats' %>
     </section>

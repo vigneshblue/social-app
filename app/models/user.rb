@@ -16,6 +16,16 @@ class User < ApplicationRecord
 	 	uniqueness: { case_sensitive: false }
 	has_secure_password
 	validates :password, presence: true, length: { minimum: 8 }, allow_nil: true
+
+	mount_uploader :picture, PictureUploader
+	validate  :picture_size
+
+	 # Validates the size of an uploaded picture.
+    def picture_size
+      if picture.size > 5.megabytes
+        errors.add(:picture, "should be less than 5MB")
+      end
+    end
 	 # Defines a proto-feed.
      # See "Following users" for the full implementation.
     def feed

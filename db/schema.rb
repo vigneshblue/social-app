@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202093345) do
+ActiveRecord::Schema.define(version: 20161203134445) do
+
+  create_table "favourites", force: :cascade do |t|
+    t.integer  "liker_id"
+    t.integer  "liked_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["liked_id"], name: "index_favourites_on_liked_id"
+    t.index ["liker_id", "liked_id"], name: "index_favourites_on_liker_id_and_liked_id", unique: true
+    t.index ["liker_id"], name: "index_favourites_on_liker_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
@@ -39,6 +49,7 @@ ActiveRecord::Schema.define(version: 20161202093345) do
     t.datetime "updated_at",                      null: false
     t.string   "password_digest"
     t.boolean  "admin",           default: false
+    t.string   "picture"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
